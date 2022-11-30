@@ -1,0 +1,26 @@
+import React from 'react'
+import Commonheader from './Commonheader'
+
+function termsandcond() {
+  return (
+    <>
+    <Commonheader/>
+        <div class="container"> <div class="Inner_pages col-lg-12 col-xs-12 col-sm-12"> <h1 class="section-heading">Terms And Conditions</h1>
+         <div class="border2"></div> <h3> Terms and Conditions for Seller:</h3>
+          <p> Sellers are required to comply with followings terms and conditions:</p> 
+          <ul>
+             <li> Provide your own mobile number to sign-up/register on website. A code will be sent on your number which you can use to register your account with Bakramandi.com.pk;</li>
+              <li> Provide correct information regarding Type, Weight, Teeth, Age of each Bakra, Bakri, Cow, Bull and other animals for online sale at Bakramandi.com.pk;</li> <li> Pictures of Bakra, Bakri, Cow, Bull and other animals should be taken from a reasonable angle. At least three unedited pictures for online sale especially from right, left and front sides to be uploaded at Bakramandi.com.pk;</li> <li> At Bakramandi.com.pk only mention city where you have capacity/ability to deliver Bakri, Cow, Bull and other animals;</li> <li> At Bakramandi.com.pk always keep your account up to date. Please remove your Bakra, Bakri, Cow, Bull and other animals as soon as it is sold. In case of failure, your account may be suspended/deactivated;</li> <li> Website management reserve the right to review content and may modify/remove any content if it seems reasonable;</li> <li> Provide all requested information to prospective Buyer for the animal to be sold in addition to information already available at Bakramandi.com.pk;</li> <li> Please consider all risks associated with payment and delivery of your Bakra, Bakri, Cow, Bull and other animals. Barkramandi.com.pk is not responsible in case of any loss;</li> <li> Charge reasonable prices on Bakramandi.com.pk as per prevailing market trends. Animals with apparently exceptionally high prices may not be allowed; and</li> <li> Adhere to basic principles of ethics and decency in all your activities associated with the Bakramandi.com.pk</li> </ul> <br/> <h3> Terms and Conditions for Buyer:</h3> <ul> <li> Please consider all risk and safeguards relevant to payment and delivery of animals purchased through Barkramandi.com.pk and management is not responsible in case of any loss.</li> <li> Be diligent and require all possible information, pictures, video from respective seller regarding animal under consideration just to ensure your purchase is good value for money.</li> <li> Immediately report any issue faced to Bakramandi.com.pk so as to make it a decent, better and safe place for any sale/purchase for animals.</li> </ul> <p> </p> <br/> <div dir="RTL">
+                 <h3>بیچنے والے کے لئے شرائط و ضوابط </h3> <ul>
+                     <li style={{marginRight: "25px;"}}>ویب سائٹ پر سائن اپ / رجسٹر کرنے کیلئے اپنے ذاتی موبائل نمبر فراہم کریں. آپ کا اکاؤنٹ رجسٹر کرنے کیلئے ایک کوڈ آپ کے نمبر پر بھیج دیا جائے گا </li> <li style={{marginRight: "25px"}}>بکرا، بکری، گائے، بیل اور دیگر جانوروں کے آن لائن فروخت کے بارے میں صحیح معلومات فراہم کریں جیسا کہ ٹائپ، وزن، دانت وغیرہ</li> <li style={{marginRight: "25px"}}>بکرا، بکری، گائے، بیل اور دیگر جانوروں کی تصاویر کو مناسب زاویہ سے لے جانا چاہئے. خاص طور پر دائیں بائیں اور سامنے والے اطراف سے آن لائن فروخت کے لئے کم از کم تین تصاویر اپ لوڈ کی جائیں گی</li>
+                      <li style={{marginRight: "25px"}}>ویب سائٹ پر صرف اس شہر کا ذکر کریں جہاں آپ کو بکری، گائے، بیل اور دیگر جانوروں کو فراہم کرنے کی صلاحیت ہے </li> <li style={{marginRight: "25px"}}>ہمیشہ ویب سائٹ پر اپنے اکاؤنٹ کو برقرار رکھیں. براہ کرم اپنے بکرا، بکری، گائے، بیل اور دیگر جانوروں کو جیسے ہی فروخت کیا جا ہے جلد ہی ویب سائٹ سے نکال دیں. ناکامی کی صورت میں، آپ کا اکاؤنٹ معطل یا غیر فعال ہوسکتا ہے </li> <li style={{marginRight: "25px"}}>ویب سائٹ انتظامیہ مواد کو نظر ثانی کرنے کا حق محفوظ رکھتی ہے اور اگر یہ مناسب لگتا ہے تو کسی بھی مواد میں ترمیم یا ہٹا سکتی ہے </li> <li style={{marginRight: "25px"}}>جانوروں کو فروخت کرنے کے لئے ممکنہ خریدار کے لئے تمام مطلوبہ معلومات فراہم کریں</li> <li style={{marginRight: "25px"}}>بکرا، بکری، گائے، بیل اور دیگر جانوروں کی ادائیگی اور ترسیل کے ساتھ منسلک تمام خطرات پر غور کریں اور کسی بھی نقصان کے معاملے میں ویب سائٹ انتظامیہ ذمہ دار نہیں ہے</li> <li style={{marginRight: "25px"}}>موجودہ بازار کے رجحانات کے مطابق مناسب قیمتوں کا چارج کریں. ویب سائٹ پر واضح طور پر غیر معمولی قیمتوں والے جانوروں کو اجازت نہیں دی جا سکتی ہے؛ اور</li> <li style={{marginRight: "25px"}}>ویب سائٹ سے منسلک آپ کی تمام سرگرمیوں میں اخلاقیات اور صداقت کے بنیادی اصولوں پر عمل کریں</li> </ul> <br/> <h3>خریدار کے لئے شرائط و ضوابط </h3> <ul> <li style={{marginRight: "25px"}}>براہ کرم جانوروں کی ادائیگی اور ترسیل سے متعلق تمام خطرے اور تحفظات پر غور کریں. ویب سائٹ انتظامیہ کسی بھی نقصان کے معاملے میں ذمہ دار نہیں ہے</li> <li style={{marginRight: "25px"}}> جانور خریدنے سے پہلے, جانوروں سے متعلق تمام ممکنہ معلومات، تصاویر، ویڈیو بیچنے والے سے حاصل کریں</li> <li style={{marginRight: "25px"}}>ویب سائٹ انتظامیہ کو کسی بھی مسائل کی فوری اطلاع دیں تاکہ کسی بھی فروخت / خریداری کے لئے اسے مہذب, بہتر اور محفوظ جگہ بنایا جا سکے</li> </ul>
+               <br/><br/><br/>
+                </div>
+
+              </div>
+         </div>
+    </>
+  )
+}
+
+export default termsandcond
