@@ -1,12 +1,12 @@
-import React from 'react'
-import Myanimals from './Myanimals'
+import React from "react";
+import Myanimals from "./Myanimals";
 
 function Manageanimal() {
-    return (
-        <>
-        <Myanimals/>
-        </>
-    )
+  return (
+    <>
+      <Myanimals />
+    </>
+  );
 }
 
-export default Manageanimal
+export default Manageanimal;
