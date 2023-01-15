@@ -30,6 +30,8 @@ const Signup = () => {
     localStorage.setItem("userId", data1?.user?._id);
     if (data1.token) {
       navigate("/");
+      window.location.reload();
+      alert("Sign Up Successful")
     }
   };
   return (

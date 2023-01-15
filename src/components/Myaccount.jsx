@@ -61,9 +61,25 @@ function Myaccount() {
                     </NavLink>
                   </li>
                   <li style={{ borderBottom: "none" }}>
-                    <a href="https://www.bakramandi.com.pk/logout">
-                      <i class="fa fa-angle-right"></i> Log Out
-                    </a>
+                  <li className="nav-item">
+                  <NavLink
+                    activeclassname="menu_active"
+                    exact
+                    className="nav-link"
+                    onClick={() => {
+                      // window.confirm("Do You want to Log Out")
+                      if (confirm("Do You want to Log Out"))
+                      {
+                      localStorage.removeItem("authToken");
+                      localStorage.removeItem("userId");
+                      window.location.reload();
+                      alert("Log out Successful")
+                    }
+                    }}
+                  >
+                    Log out
+                  </NavLink>
+                </li>
                   </li>{" "}
                 </ul>
               </div>{" "}

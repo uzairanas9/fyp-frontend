@@ -30,6 +30,10 @@ const Login = () => {
     if (data1.token) {
       navigate("/");
       window.location.reload();
+      alert("Log in Successful")
+    }
+    else{
+      alert("Wrong Email or Password Try Again")
     }
   };
   return (

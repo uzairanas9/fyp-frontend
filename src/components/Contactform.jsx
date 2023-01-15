@@ -21,7 +21,7 @@ const Contactform = () => {
     };
     const formsubmit = (e) =>{
         e.preventDefault();
-        alert(`My Name is ${data.fullname}, My Mobile Number is ${data.phone}, My Email Address is ${data.email} and My message is ${data.msg}`)
+        alert(`Your Message is sent to the admin \n \nName: ${data.fullname}, Mobile Number: ${data.phone}, Email Address: ${data.email} message: ${data.msg}`)
     }
     return (
         <>

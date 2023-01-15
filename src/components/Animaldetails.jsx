@@ -8,6 +8,7 @@ function Animaldetails() {
   const URL = "http://localhost:5000";
   const [posts, setPosts] = useState({});
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [price, setPrice] = useState();
   const [bid, setBid] = useState([]);
   var getAllNotes = async () => {
@@ -27,6 +28,7 @@ function Animaldetails() {
 
     console.log("The json data=", json.data.bids);
     setName(json.sellarName);
+    setPhone(json.Phoneno);
     setPosts(json.data);
     setBid(json.data.bids);
   };
@@ -137,7 +139,7 @@ function Animaldetails() {
                 </li>
                 <li>
                   {" "}
-                  <span>2) Seller Contact (+92355555555)</span>
+                  <span>2) Seller Contact {phone}</span>
                 </li>
                 <li>
                   <span>
@@ -156,31 +158,35 @@ function Animaldetails() {
             <div class="border4 col-lg-12"></div>{" "}
           </div>{" "}
         </div>
-        <h1 className="bid">recent bids </h1>
+        <h1 className="section-heading">Recent Bids So Far </h1>
         {bid &&
           bid.map((element, index) => (
             <div
-              className="bidcontaner "
-              style={{ border: "1px solid black", margin: "14px 0" }}
+              className="bidcontaner w-25"
+              style={{ border: "1px solid black", marginLeft: "37%", textAlign: "center" }}
               key={index}
-            >
-              <div className="bidprice">price = {element.price}</div>
-              <div className="buyername">buyerName = {element.bidderName}</div>
+            >  
+              <div className="bidprice mx-2" style={{ textAlign: "center", position: "relative", alignContent:"center" }}><h4>Bid Price: <span class="badge bg-primary">{element.price}</span></h4></div>
+              {/* <div className="bidprice mx-2">price = {element.price}</div> */}
+              {/* <div className="buyername">buyerName = {element.bidderName}</div> */}
+              <div className="bidprice mx-2"><h4>Bidder Name: <span class="badge bg-secondary">{element.bidderName}</span></h4></div>
             </div>
           ))}
 
-        <div className="addbidContainer">
-          <input
-            type="number"
-            name="price"
-            id=""
-            placeholder="add your bid price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
+        <div className="addbidContainer" style={{marginLeft:"40%", marginTop: "25px"}}>
+          <div className="input-group mb-3">
+          <input style={{borderRadius:"7px"}}
+           type="number"
+           name="price"
+           id=""
+           placeholder="add your bid price"
+           value={price}
+           onChange={(e) => setPrice(e.target.value)}
           />
-          <button className="add" onClick={addBid}>
+          <button className="add btn btn-outline-secondary" style={{borderRadius:"5px"}} onClick={addBid} >
             add
           </button>
+          </div>
         </div>
       </div>
     </>

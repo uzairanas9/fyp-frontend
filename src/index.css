@@ -247,17 +247,14 @@ button.close {
   padding-bottom: 12px;
   background-color: white;
   width: 18%;
-}
-
-.slider_btn a {
   font-size: 17px;
   text-transform: uppercase;
   color: #000000;
   text-align: center;
   /* font-family: 'Karla-Bold'; */
   text-decoration: none;
-  background-color: transparent;
 }
+
 
 .header_btm1 p {
   font-size: 20px;
@@ -367,6 +364,12 @@ p {
   padding-bottom: 12px;
   background-color: #333333;
   width: 12%;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-family: 'Karla-Bold';
+  text-decoration: none;
 }
 
 .view_btn a {
@@ -415,6 +418,7 @@ p {
   padding-top: 14px;
   padding-bottom: 12px;
   background-color: white;
+  color: black;
   width: 12%;
 }
 
@@ -517,6 +521,14 @@ ul {
 
 .footer-menu li {
   display: block;
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  overflow: hidden;
+  padding: 2px 0;
+  transition: .3s;
+  font-family: 'Karla-Regular';
+  text-decoration: none;
 }
 
 .footer-menu ul li a {
@@ -1002,4 +1014,3 @@ form {
   display: block;
   margin-top: 0em;
 }
-

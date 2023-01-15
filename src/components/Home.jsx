@@ -1,5 +1,6 @@
 import React from 'react'
 import img1 from "../images/img1.jpg"
+import { NavLink } from 'react-router-dom'
 // import img1 from "../images/img1.jpg"
 // import img4 from "../images/img4.jpg"
 import img10 from "../images/img10.jpg"
@@ -25,7 +26,14 @@ function Home() {
             <div class="carousel-caption visible-lg visible-sm">
               <h1>Pakistan's</h1>
               <h3> Biggest Online Bakramandi</h3>
-              <div class="slider_btn"> <a href="">Learn More</a> </div>
+               <NavLink
+                  activeClassName="menu_active"
+                  exact
+                  className="nav-link"
+                  to="/about"
+                > <div class="slider_btn"> 
+                  Learn More </div>
+                </NavLink> 
             </div>
           </div>
           <div class="carousel-item">
@@ -33,7 +41,14 @@ function Home() {
             <div class="carousel-caption visible-lg visible-sm">
               <h1>Pakistan's</h1>
               <h3> Biggest Online Bakramandi</h3>
-              <div class="slider_btn"> <a href="">Learn More</a> </div>
+              <NavLink
+                  activeClassName="menu_active"
+                  exact
+                  className="nav-link"
+                  to="/about"
+                > <div class="slider_btn"> 
+                  Learn More </div>
+                </NavLink> 
             </div>
           </div>
           <div class="carousel-item">
@@ -41,7 +56,14 @@ function Home() {
             <div class="carousel-caption visible-lg visible-sm">
               <h1>Pakistan's</h1>
               <h3> Biggest Online Bakramandi</h3>
-              <div class="slider_btn"> <a href="">Learn More</a> </div>
+              <NavLink
+                  activeClassName="menu_active"
+                  exact
+                  className="nav-link"
+                  to="/about"
+                > <div class="slider_btn"> 
+                  Learn More </div>
+                </NavLink> 
             </div>
           </div>
         </div>
@@ -72,16 +94,27 @@ function Home() {
           </div>
         </div>
       </div>
-      <div class="btn1 col-lg-12 col-xs-12 col-sm-12"> <div class="view_btn">
-        <a href="">View all</a> </div> </div>
+      <div class="btn1 col-lg-12 col-xs-12 col-sm-12">  </div>
 
       <div class="footer_bottombg">
         <div class="container"> <div class="footer_btm_tx col-lg-12 col-xs-12 col-sm-12">
           <h3>Want to <span style={{ color: "#fdbc15" }}>Sell Your Animals</span> <br /> at Bakra Mandi?</h3>
-          <div class="btn1 col-lg-12 col-xs-12 col-sm-12"> <div class="view_btn1">
-            <a href="">Free Signup</a> </div> </div> <h4 dir="RTL" style={{ color: "black" }}>اگر اپ سائن اپ نہیں کر سکتے<br /> اپنے مویشی کے معلومات ہمیں Whatsapp کریں اور<br /> ہم اپ ک لئے اپ لوڈ کریں گے</h4> <div class="btn1 col-lg-12 col-xs-12 col-sm-12">
+          <div class="btn1 col-lg-12 col-xs-12 col-sm-12"> 
+            <NavLink
+                  activeClassName="menu_active"
+                  exact
+                  className="nav-link"
+                  to="/signup"
+                >
+                  <div class="view_btn1"> 
+                  Free Signup </div>
+                </NavLink>  </div>
+            <h4 dir="RTL" style={{ color: "black" }}>اگر اپ سائن اپ نہیں کر سکتے<br /> اپنے مویشی کے معلومات ہمیں Whatsapp کریں اور<br /> ہم اپ ک لئے اپ لوڈ کریں گے</h4> <div class="btn1 col-lg-12 col-xs-12 col-sm-12">
             <div class="view_btn1">
-              <a href="">+92 3415552862</a>
+            <a
+                      href="https://api.whatsapp.com/send?phone=923415552862&amp;text=Hi"
+                      target="_blank"
+                    >WhatsApp Now</a>
             </div> </div> </div> </div> </div>
 
       <div class="footer_bottom">

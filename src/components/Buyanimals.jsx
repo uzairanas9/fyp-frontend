@@ -57,6 +57,17 @@ function Buyanimals() {
 
 export default Buyanimals;
 
+<div class="dropdown">
+     <select name="type" id="type" class=""><option value="">Type</option>
+     <option value="">All</option><option value="14">Bahawalpuri</option>
+     <option value="5">Barbari</option><option value="8">Beetal</option>
+     <option value="12">Bull</option><option value="1">Chatraa</option>
+     <option value="7">Dera bin panah</option><option value="9">Desi</option>
+     <option value="15">Donda</option><option value="11">Dumba</option>
+     <option value="6">Kaghani</option><option value="3">Kamori</option>
+     <option value="10">Makhi cheena</option><option value="4">Nachi</option>
+     <option value="13">Rajunpuri</option></select> </div>
+
 // <div className="my-5">
 // <h1 class="section-heading">Animal Listings</h1>
 // </div>
@@ -65,17 +76,8 @@ export default Buyanimals;
 // <option value="">Category</option><option value="">All</option><option value="2">Bakra</option>
 // <option value="4">Bakri</option><option value="8">Buffalo</option><option value="5" selected="">Bull</option>
 // <option value="7">Calf</option><option value="6">Cow</option><option value="9">Dumba</option>
-// </select> </div> <div class="dropdown">
-//      <select name="type" id="type" class=""><option value="">Type</option>
-//      <option value="">All</option><option value="14">Bahawalpuri</option>
-//      <option value="5">Barbari</option><option value="8">Beetal</option>
-//      <option value="12">Bull</option><option value="1">Chatraa</option>
-//      <option value="7">Dera bin panah</option><option value="9">Desi</option>
-//      <option value="15">Donda</option><option value="11">Dumba</option>
-//      <option value="6">Kaghani</option><option value="3">Kamori</option>
-//      <option value="10">Makhi cheena</option><option value="4">Nachi</option>
-//      <option value="13">Rajunpuri</option></select> </div>
-// <div class="dropdown">
+// </select> </div> <
+{/* <div class="dropdown"> */}
 // <select name="city" id="city" class="">
 // <option value="" disabled selected>Select The City</option>
 // <option value="Islamabad">Islamabad</option>
