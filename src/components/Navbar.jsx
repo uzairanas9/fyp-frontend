@@ -90,13 +90,13 @@ const Navbar = () => {
                     className="nav-link"
                     onClick={() => {
                       // window.confirm("Do You want to Log Out")
-                      if (confirm("Do You want to Log Out"))
+                      // if (confirm("Do You want to Log Out"))
                       {
-                      localStorage.removeItem("authToken");
-                      localStorage.removeItem("userId");
-                      window.location.reload();
-                      alert("Log out Successful")
-                    }
+                        localStorage.removeItem("authToken");
+                        localStorage.removeItem("userId");
+                        window.location.reload();
+                        alert("Log out Successful");
+                      }
                     }}
                   >
                     Log out
