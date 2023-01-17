@@ -19,10 +19,10 @@ function Buyanimals() {
   const [filterByCategory, setFilterByCategory] = useState("all");
   const [filterByCity, setFilterByCity] = useState(null);
   useEffect(() => {
-    getAllNotes();
+    const data = getAllNotes();
     // getFilterData();
-    console.log("The Posts Data:", posts);
-  }, [filterByCategory]);
+    console.log("The Posts Data:", data.data);
+  }, [filterByCategory, filterByCity]);
 
   const filterCategory = (e) => {
     setFilterByCategory(e.target.value);
@@ -36,7 +36,7 @@ function Buyanimals() {
   const getAllNotes = async () => {
     // API Call
     const response = await fetch(
-      `http://localhost:5000/api/getFilterPost/?type=${filterByCategory}`,
+      `${URL}/api/getFilterPost/?type=${filterByCategory}&city=${filterByCity}`,
       {
         method: "GET",
         headers: {
@@ -47,8 +47,9 @@ function Buyanimals() {
     );
     // console.log("The response=",response);
     const json = await response.json();
-    console.log("The json data=", json);
+    console.log("The json data=", json.data);
     setPosts(json.data);
+    return json;
   };
   // const getFilterData = async () => {
   //   const response = await fetch(
