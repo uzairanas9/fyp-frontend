@@ -5,12 +5,14 @@ import { Routes, Route, useParams } from "react-router-dom";
 import axios from "axios";
 function Animaldetails() {
   const { id } = useParams();
+  console.log("IDDDDDD", id);
   const URL = "http://localhost:5000";
   const [posts, setPosts] = useState({});
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [price, setPrice] = useState();
   const [bid, setBid] = useState([]);
+  const [sellerId, setSellerId] = useState("");
   var getAllNotes = async () => {
     // API Call
     const response = await fetch(
@@ -25,17 +27,24 @@ function Animaldetails() {
     );
     // console.log("The response=",response);
     const json = await response.json();
-
-    console.log("The json data=", json.data.bids);
+    // console.log("The json data=", json.data.bids);
     setName(json.sellarName);
-    setPhone(json.phoneno);
     setPosts(json.data);
     setBid(json.data.bids);
   };
   useEffect(() => {
     getAllNotes();
-    console.log("The Data:", posts);
-  }, []);
+    setSellerId(posts.sellerId);
+  }, [id]);
+
+  console.log("The Data:", posts);
+  console.log("The IDDDDDDDD", sellerId);
+
+  useEffect(() => {
+    console.log(sellerId);
+    SellerData();
+  }, [sellerId]);
+
   const addBid = async () => {
     console.log(price);
     const response = await axios.post(
@@ -49,6 +58,15 @@ function Animaldetails() {
     getAllNotes();
     setPrice("");
     console.log(data2);
+  };
+
+  const SellerData = async () => {
+    const response = await axios.get(
+      `http://localhost:5000/api/getSingleUser/${sellerId}`
+    );
+    const data1 = await response.data;
+    // console.log("ABCCCCCCCC=====", data1.data.phoneno);
+    setPhone(data1.data.phoneno);
   };
   return (
     <>
@@ -139,7 +157,7 @@ function Animaldetails() {
                 </li>
                 <li>
                   {" "}
-                  <span>2) Seller Contact:  </span>  {phone}
+                  <span>2) Seller Contact {phone}</span>
                 </li>
                 <li>
                   <span>
@@ -163,29 +181,58 @@ function Animaldetails() {
           bid.map((element, index) => (
             <div
               className="bidcontaner w-25"
-              style={{ border: "1px solid black", marginLeft: "37%", textAlign: "center" }}
+              style={{
+                border: "1px solid black",
+                marginLeft: "37%",
+                textAlign: "center",
+              }}
               key={index}
-            >  
-              <div className="bidprice mx-2" style={{ textAlign: "center", position: "relative", alignContent:"center" }}><h4>Bid Price: <span class="badge bg-primary">{element.price}</span></h4></div>
+            >
+              <div
+                className="bidprice mx-2"
+                style={{
+                  textAlign: "center",
+                  position: "relative",
+                  alignContent: "center",
+                }}
+              >
+                <h4>
+                  Bid Price:{" "}
+                  <span class="badge bg-primary">{element.price}</span>
+                </h4>
+              </div>
               {/* <div className="bidprice mx-2">price = {element.price}</div> */}
               {/* <div className="buyername">buyerName = {element.bidderName}</div> */}
-              <div className="bidprice mx-2"><h4>Bidder Name: <span class="badge bg-secondary">{element.bidderName}</span></h4></div>
+              <div className="bidprice mx-2">
+                <h4>
+                  Bidder Name:{" "}
+                  <span class="badge bg-secondary">{element.bidderName}</span>
+                </h4>
+              </div>
             </div>
           ))}
 
-        <div className="addbidContainer" style={{marginLeft:"40%", marginTop: "25px"}}>
+        <div
+          className="addbidContainer"
+          style={{ marginLeft: "40%", marginTop: "25px" }}
+        >
           <div className="input-group mb-3">
-          <input style={{borderRadius:"7px"}}
-           type="number"
-           name="price"
-           id=""
-           placeholder="add your bid price"
-           value={price}
-           onChange={(e) => setPrice(e.target.value)}
-          />
-          <button className="add btn btn-outline-secondary" style={{borderRadius:"5px"}} onClick={addBid} >
-            add
-          </button>
+            <input
+              style={{ borderRadius: "7px" }}
+              type="number"
+              name="price"
+              id=""
+              placeholder="add your bid price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <button
+              className="add btn btn-outline-secondary"
+              style={{ borderRadius: "5px" }}
+              onClick={addBid}
+            >
+              add
+            </button>
           </div>
         </div>
       </div>

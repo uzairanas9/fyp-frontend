@@ -24,17 +24,17 @@ const Login = () => {
     e.preventDefault();
     const response = await axios.post(`http://localhost:5000/api/signin`, data);
     const data1 = await response.data;
-    console.log(data1);
-    localStorage.setItem("authToken", data1?.token);
+    // console.log("The SIGN-In User Data", data1.data._id);
+    localStorage.setItem("authToken", data1.data?.token);
     localStorage.setItem("userId", data1?.user?._id);
-    if (data1.token) {
-      navigate("/");
-      window.location.reload();
-      alert("Log in Successful")
-    }
-    else{
-      alert("Wrong Email or Password Try Again")
-    }
+    localStorage.setItem("lohinUserId", data1.data._id);
+    // if (data1.token) {
+    //   navigate("/");
+    //   window.location.reload();
+    //   alert("Log in Successful");
+    // } else {
+    //   alert("Wrong Email or Password Try Again");
+    // }
   };
   return (
     <>
