@@ -20,10 +20,14 @@ import Dashboard from './components/Dashboard';
 import Manageanimal from './components/Manageanimal';
 import Addanimal from './components/Addanimal';
 
+
 function App() {
+  
   return (
     <>
+    
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

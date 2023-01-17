@@ -28,7 +28,7 @@ function Animaldetails() {
 
     console.log("The json data=", json.data.bids);
     setName(json.sellarName);
-    setPhone(json.Phoneno);
+    setPhone(json.phoneno);
     setPosts(json.data);
     setBid(json.data.bids);
   };
@@ -139,7 +139,7 @@ function Animaldetails() {
                 </li>
                 <li>
                   {" "}
-                  <span>2) Seller Contact {phone}</span>
+                  <span>2) Seller Contact:  </span>  {phone}
                 </li>
                 <li>
                   <span>

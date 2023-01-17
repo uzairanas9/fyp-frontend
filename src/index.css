@@ -1014,3 +1014,27 @@ form {
   display: block;
   margin-top: 0em;
 }
+
+/*FloatingIcon.css*/
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  font-size: 40px;
+  color: #f6b743;
+  background-color: transparent;
+  border: none;
+  /* width: 70px;
+  height: 70px; */
+  /* background: rgb(172, 72, 72); */
+  /* padding: 8px; */
+  /* border-radius: 50%; */
+}
+
+.chat {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 999;
+}

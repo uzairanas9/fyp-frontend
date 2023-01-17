@@ -7,13 +7,13 @@ import img10 from "../images/img10.jpg"
 import img5 from "../images/img5.jpg"
 import Card from './Card'
 import Footer from './Footer'
-// import Navbar from './Navbar'
 
 
 function Home() {
   return (
     <>
     {/* <Navbar/> */}
+    
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -135,6 +135,7 @@ function Home() {
           </div>
         </div>
       </div>
+      
     </>
   )
 }
