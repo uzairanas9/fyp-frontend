@@ -10,9 +10,9 @@ function About() {
             {/* <Navbar/> */}
            <Commonheader title="About US"/>
 
-            <div class="container">
+            <div class="container " style={{marginTop:"50px"}}>
                 <div class="Inner_pages col-lg-12 col-xs-12 col-sm-12">
-                    <h1 class="section-heading">About Us</h1>
+                    {/* <h1 class="section-heading">About Us</h1> */}
                     <div class="inner_img col-lg-6 col-xs-12 col-sm-6" style={{ textAlign: "justify" }}>
                         <img alt="bakra mandi" class="img-responsive" src={img4} />
                     </div>

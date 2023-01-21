@@ -18,9 +18,9 @@ function Contact() {
     return (
         <>
             {/* <Navbar /> */}
-            <Commonheader />
+            <Commonheader title="Contact Us"/>
             <div className="my-5">
-                <h1 class="section-heading">Contact US</h1>
+                {/* <h1 class="section-heading">Contact US</h1> */}
             </div>
 
             {/* <div className="floating-icon">

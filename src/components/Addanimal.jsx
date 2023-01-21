@@ -16,11 +16,11 @@ function Addanimal() {
     sellerId: localStorage.getItem("userId"),
   });
 
-  const [Photo, setphoto] = useState("");
-  const inputPhoto = (e) => {
-    console.log(e.target.files[0]);
-    setphoto(e.target.files[0]);
-  };
+  // const [Photo, setphoto] = useState("");
+  // const inputPhoto = (e) => {
+  //   console.log(e.target.files[0]);
+  //   setphoto(e.target.files[0]);
+  // };
 
   const inputHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -28,14 +28,14 @@ function Addanimal() {
 
   const onSubmit = async (e) => {
     console.log("The Input Data=", input);
-    console.log("The Photo Data=", Photo);
+    // console.log("The Photo Data=", Photo);
     e.preventDefault();
     const response = await axios.post("http://localhost:5000/api/addPost", {
       headers: {
         "content-type": "multipart/formdata",
       },
       ...input,
-      Photo,
+      // Photo,
     });
     const data1 = await response.data;
     console.log(data1);
@@ -186,12 +186,12 @@ function Addanimal() {
                 </textarea>{" "}
               </div>
               <div class="form-group col-lg-11 col-xs-11 col-sm-5">
-                <label>
+                {/* <label>
                   Pictures / تصویریں
                   <strong> (Press Ctrl to select multiple files)</strong> / (
                   Ctrl متعدد فائلوں کو منتخب کرنے کیلئے دبائیں)
                 </label>
-                <input type="file" name="Photo" onChange={inputPhoto} />{" "}
+                <input type="file" name="Photo" onChange={inputPhoto} />{" "} */}
                 {/* <Form.Group className="mb-3" controlId="formBasicFile">
                   <Form.Label>Add photo</Form.Label>
                   <Form.Control

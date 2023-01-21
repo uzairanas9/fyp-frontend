@@ -14,7 +14,7 @@ function Myanimals() {
       );
       const data1 = await response.data;
       setData(data1.data);
-      console.log(data1);
+      console.log("I am data 1",data1);
     })();
   }, []);
   return (

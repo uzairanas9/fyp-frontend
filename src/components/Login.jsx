@@ -28,13 +28,13 @@ const Login = () => {
     localStorage.setItem("authToken", data1.data?.token);
     localStorage.setItem("userId", data1?.user?._id);
     localStorage.setItem("lohinUserId", data1.data._id);
-    // if (data1.token) {
-    //   navigate("/");
-    //   window.location.reload();
-    //   alert("Log in Successful");
-    // } else {
-    //   alert("Wrong Email or Password Try Again");
-    // }
+    if (data1.token) {
+      navigate("/");
+      window.location.reload();
+      alert("Log in Successful");
+    } else {
+      alert("Wrong Email or Password Try Again");
+    }
   };
   return (
     <>

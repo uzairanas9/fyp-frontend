@@ -5,7 +5,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import axios from "axios";
 function Animaldetails() {
   const { id } = useParams();
-  console.log("IDDDDDD", id);
+  // console.log("IDDDDDD", id);
   const URL = "http://localhost:5000";
   const [posts, setPosts] = useState({});
   const [name, setName] = useState("");
@@ -31,17 +31,16 @@ function Animaldetails() {
     setName(json.sellarName);
     setPosts(json.data);
     setBid(json.data.bids);
-  };
-  useEffect(() => {
-    getAllNotes();
     setSellerId(posts.sellerId);
-  }, [id]);
+    console.log("I am seller id at get all notes d ", sellerId)
+  };
 
   console.log("The Data:", posts);
-  console.log("The IDDDDDDDD", sellerId);
+  console.log("The IDDDDDDDD   here", sellerId);
 
   useEffect(() => {
     console.log(sellerId);
+    getAllNotes();
     SellerData();
   }, [sellerId]);
 
@@ -57,7 +56,7 @@ function Animaldetails() {
     const data2 = await response.data;
     getAllNotes();
     setPrice("");
-    console.log(data2);
+    // console.log(data2);
   };
 
   const SellerData = async () => {
@@ -68,12 +67,14 @@ function Animaldetails() {
     // console.log("ABCCCCCCCC=====", data1.data.phoneno);
     setPhone(data1.data.phoneno);
   };
+
+  const link = `https://api.whatsapp.com/send?phone=${phone}&text=Hi I have seen your project on Online Bakramandi is it still available`
   return (
     <>
-      <Commonheader />
+      <Commonheader title="Animal Details"/>
       <div class="container">
-        <div class="Inner_pages col-lg-12 col-xs-12 col-sm-12" id="content">
-          <h1 class="section-heading">Animal Details</h1>
+        <div class=" col-lg-12 col-xs-12 col-sm-12" id="content">
+          {/* <h1 class="section-heading">Animal Details</h1> */}
           <div class="product_slider col-lg-12 col-xs-12 col-sm-12">
             <div data-ride="carousel" class="carousel slide" id="myCarousel">
               <div class="carousel-inner"> </div>{" "}
@@ -91,7 +92,7 @@ function Animaldetails() {
               </div>{" "}
             </div>{" "}
           </div>
-          <div class="product_bgc col-lg-12 col-xs-12 col-sm-12">
+          <div class="product_bgc col-lg-12 col-xs-12 col-sm-12"  style={{paddinTop:"20px", paddingBottom:"20px"}}>
             <h2>{posts.name}</h2>
             <h3>Animal Details</h3>
             <div class="border4"></div>
@@ -160,16 +161,17 @@ function Animaldetails() {
                   <span>2) Seller Contact {phone}</span>
                 </li>
                 <li>
-                  <span>
                     {" "}
+                    <span>
                     3){" "}
+                    
                     <a
-                      href="https://api.whatsapp.com/send?phone=923415552862&amp;text=Hi"
+                      href= {link}
                       target="_blank"
                     >
                       Whatsapp
                     </a>
-                  </span>
+                    </span>
                 </li>{" "}
               </ul>
             </div>{" "}
@@ -221,7 +223,7 @@ function Animaldetails() {
               style={{ borderRadius: "7px" }}
               type="number"
               name="price"
-              id=""
+              id="bid"
               placeholder="add your bid price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}

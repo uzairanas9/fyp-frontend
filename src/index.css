@@ -98,8 +98,10 @@ code {
 
 .product_bgc {
   margin-top: 12px;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   background-color: #f9f9f8;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .product_bgc h2 {
@@ -384,7 +386,7 @@ p {
 .footer_bottombg {
   margin: 0 auto;
   margin-top: 35px;
-  background: url("./images/img12.jpg") no-repeat fixed 50% / cover;
+  background: url("./images/himg.jpg") no-repeat fixed 50% / cover;
   height: 600px;
   width: 100%;
 }
@@ -629,7 +631,19 @@ ul {
 
 .inner_banner {
   width: 100%;
+  background-image: url("./images/headerimg2.png");
+  height: 200px;
+  align-items: center;
   border-top: 8px solid black;
+}
+
+.inner_banner h1{
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-size: 46px;
+  font-weight: 700;
 }
 
 .img-responsive {

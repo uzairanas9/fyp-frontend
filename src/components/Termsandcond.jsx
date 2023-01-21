@@ -4,8 +4,9 @@ import Commonheader from './Commonheader'
 function termsandcond() {
   return (
     <>
-    <Commonheader/>
-        <div class="container"> <div class="Inner_pages col-lg-12 col-xs-12 col-sm-12"> <h1 class="section-heading">Terms And Conditions</h1>
+    <Commonheader title="Terms And Conditions"/>
+        <div class="container"> <div class="Inner_pages col-lg-12 col-xs-12 col-sm-12"> 
+        {/* <h1 class="section-heading">Terms And Conditions</h1> */}
          <div class="border2"></div> <h3> Terms and Conditions for Seller:</h3>
           <p> Sellers are required to comply with followings terms and conditions:</p> 
           <ul>

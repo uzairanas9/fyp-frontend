@@ -4,11 +4,7 @@ const URL = "http://localhost:5000";
 function Personalinfo() {
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState("");
-  useEffect(() => {
-    const Id = localStorage.getItem("lohinUserId");
-    setUserId(Id);
-    getNotes();
-  }, [userId]);
+ 
 
   console.log("The User Get from Local is", userId);
   const getNotes = async () => {
@@ -23,6 +19,13 @@ function Personalinfo() {
     console.log("The json data=", json.data);
     setUserInfo(json.data);
   };
+
+  useEffect(() => {
+    const Id = localStorage.getItem("lohinUserId");
+    console.log("ID is here",Id)
+    setUserId(Id);
+    getNotes();
+  }, [userId]);
 
   console.log("The Data in the State", userInfo);
   return (

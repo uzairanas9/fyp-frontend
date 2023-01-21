@@ -69,10 +69,10 @@ function Buyanimals() {
   // };
   return (
     <>
-      <Commonheader />
+      <Commonheader title="Buy Animals"/>
       {/* <Filter /> */}
       <div className="my-5">
-        <h1 class="section-heading">Animal Listings</h1>
+        {/* <h1 class="section-heading">Animal Listings</h1> */}
       </div>
       <div class="sort_filters col-lg-9 col-xs-12 col-sm-4" align="center">
         {" "}

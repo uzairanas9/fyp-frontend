@@ -87,9 +87,9 @@ function Home() {
         <div className="row">
           <div className="col-10 mx-auto">
             <div className="row gy-5">
-              <Card />
-              <Card />
-              <Card />
+              <Card name="Healthy Cow For Sale" price="120,000" phone="3415552862"/>
+              <Card name="Cow In Islamabad" price="100,000" phone="3425552841"/>
+              <Card name="Cow For Sale" price="150,000" phone="3323234512"/>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ function Home() {
                   <div class="view_btn1"> 
                   Free Signup </div>
                 </NavLink>  </div>
-            <h4 dir="RTL" style={{ color: "black" }}>اگر اپ سائن اپ نہیں کر سکتے<br /> اپنے مویشی کے معلومات ہمیں Whatsapp کریں اور<br /> ہم اپ ک لئے اپ لوڈ کریں گے</h4> <div class="btn1 col-lg-12 col-xs-12 col-sm-12">
+            <h4 dir="RTL" style={{ color: "white" }}>اگر اپ سائن اپ نہیں کر سکتے<br /> اپنے مویشی کے معلومات ہمیں Whatsapp کریں اور<br /> ہم اپ ک لئے اپ لوڈ کریں گے</h4> <div class="btn1 col-lg-12 col-xs-12 col-sm-12">
             <div class="view_btn1">
             <a
                       href="https://api.whatsapp.com/send?phone=923415552862&amp;text=Hi"
