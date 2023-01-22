@@ -2,19 +2,28 @@ import React from "react";
 import axios from "axios";
 import Myaccount from "./Myaccount";
 import  { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import MarkAsSoldButton from "./Markassold";
+import Updatepost from "./Updatepost";
+import Animaldetails from "./Animaldetails";
+import AnimalList from "./AnimalList";
+// import Manageanimal from 'Manageanimal';
 
 function Manageanimal() {
   const id = "6392281ec05db3df839c618b";
-  const [data, setData] = useState([]);
-  useEffect(
-   async () => {
-      
+  // const [data, setData] = useState([]);
+  // const [sold, setSold]= useState("No")
+  const[animals,setAnimals]=useState([]);
+  useEffect( () => {
+    const fetchData=async()=>{
       const response = await axios.get(`http://localhost:5000/api/getUserPost/${id}`);
       const data1 =  response.data;
-      setData(data1.data);
-      console.log("I am data 1",data);
-    },[]);
+      console.log("I am data 1",data1.data);
+      setAnimals(data1.data)
+    }
+    fetchData();
+      // soldanimal();
+    },[id]);
 
   console.log("local storage", id)
   return (
@@ -76,7 +85,7 @@ function Manageanimal() {
                       color: "white",
                     }}
                   >
-                    Animal Code
+                    Animal Name
                   </th>
                   <th
                     style={{
@@ -150,93 +159,12 @@ function Manageanimal() {
                   borderTop: "2px solid #11b2a5",
                 }}
               >
-                {data.map((e) => (
-                  <tr>
-                    <td style={{ paddingLeft: "25px" }}>1</td>
-                    <td
-                      style={{
-                        paddingLeft: "20px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      {e._id}
-                    </td>
-                    <td
-                      style={{
-                        paddingLeft: "22px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      {" "}
-                      {e.age}
-                    </td>
-                    <td
-                      style={{
-                        paddingLeft: "23px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      {e.name}
-                    </td>
-                    <td
-                      style={{
-                        paddingLeft: "20px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      {e.weight}
-                    </td>
-                    <td
-                      style={{
-                        paddingLeft: "20px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      {e.city}
-                    </td>
-                    <td
-                      style={{
-                        paddingLeft: "20px",
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      <span style={{ color: "green" }}>NO</span>
-                    </td>
-                    <td
-                      style={{
-                        fontSize: "16px",
-                        color: "#363636",
-                        fontFamily: "Karla-Regular",
-                        paddingTop: "14px",
-                      }}
-                    >
-                      <a href="">Mark As Sold</a> /{" "}
-                      <a href="" onclick="">
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                ))}
               </tbody>
             </table>
+            {animals.map((animal,index)=>(
+              <AnimalList key={index} srNo={index} id={animal._id} name={animal.name} type={animal.type} weight={animal.weight} age={animal.age} city={animal.city} />
+
+            ))}
           </div>
         </div>
       </div>
@@ -245,3 +173,4 @@ function Manageanimal() {
 }
 
 export default Manageanimal;
+

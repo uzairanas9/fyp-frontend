@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Myaccount from "./Myaccount";
+import Updateuserdata from "./Updateuserdata";
+import Changepassword from "./Changepassword";
 const URL = "http://localhost:5000";
 function Personalinfo() {
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState("");
+  const [isUpdated, setIsUpdated] = useState(false);
  
 
   console.log("The User Get from Local is", userId);
@@ -27,6 +30,17 @@ function Personalinfo() {
     getNotes();
   }, [userId]);
 
+  // const [isUpdated, setIsUpdated] = useState(false);
+
+  // const handleUpdate = (updatedData) => {
+  //   setUserInfo(updatedData);
+  // }
+
+   
+    const handleUpdate = () => {
+      setIsUpdated(true);
+      getNotes();
+    }
   console.log("The Data in the State", userInfo);
   return (
     <>
@@ -48,7 +62,15 @@ function Personalinfo() {
             </div>{" "}
           </div>{" "}
         </div>
+        <div className="container info_box col-6" >
+        <h1 class="section-heading" style={{alignItems:"left"}}>Update Your Data</h1>
+      <Updateuserdata  userId = {userId} onUpdate={handleUpdate} />
+      {isUpdated && <p>User data updated</p>}
+    </div>
+
+    {/* <Changepassword></Changepassword> */}
       </div>
+      
     </>
   );
 }

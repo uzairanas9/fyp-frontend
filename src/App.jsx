@@ -19,6 +19,10 @@ import Personalinfo from './components/Personalinfo';
 import Dashboard from './components/Dashboard';
 import Manageanimal from './components/Manageanimal';
 import Addanimal from './components/Addanimal';
+import Updatepost from './components/Updatepost';
+import Updateuserdata from './components/Updateuserdata';
+import AdminUserData from './components/Adminuserdata';
+import AdminUpdateData from './components/AdminUpdateData';
 
 
 function App() {
@@ -42,6 +46,11 @@ function App() {
         <Route exact path="/dashboard" element={<Dashboard/>} />
         <Route exact path="/manageanimal" element={<Manageanimal/>} />
         <Route exact path="/addanimal" element={<Addanimal/>} />
+        <Route exact path="/updatepost/:id" element={<Updatepost/>} />
+        <Route exact path="/updateuserdata" element={<Updateuserdata/>} />
+        <Route exact path="/AdminUpdateData/:id" element={<AdminUpdateData/>} />
+        <Route exact path="/AdminUserData" element={<AdminUserData/>} />
+        
       </Routes>
       <Footer/>
     </>

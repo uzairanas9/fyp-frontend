@@ -28,6 +28,7 @@ const Signup = () => {
     const data1 = await response.data;
     localStorage.setItem("authToken", data1?.token);
     localStorage.setItem("userId", data1?.user?._id);
+    localStorage.setItem("lohinUserId", data1.data._id);
     if (data1.token) {
       navigate("/");
       window.location.reload();

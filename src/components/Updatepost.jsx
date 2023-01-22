@@ -1,58 +1,78 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { Form } from "react-bootstrap";
-import Myaccount from "./Myaccount";
-function Addanimal() {
-  const [input, setInput] = useState({
-    name: "",
-    type: "",
-    city: "",
-    price: "",
-    age: "",
-    color: "",
-    weight: "",
-    teeth: "",
-    description: "",
-    sellerId: localStorage.getItem("lohinUserId"),
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import {  useParams } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+const Updatepost = ({ad, adId}) => {
+    adId = "6394ce7163b79f8d0dc5ff4b"
+    // const [ad, setAd] = useState({});
+    const {id}=useParams();
+    const navigate = useNavigate();
+    
+    console.log("IDDDDDDDDD==",id);
+    const response =  fetch(
+        `http://localhost:5000/api/getSinglePost/${id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            // "auth-token":"Token here",
+          },
+        }
+      );
+
+      const json = response.json;
+    //    setAd (json);
+    ad = {json};
+   
+  const [formData, setFormData] = useState({
+   
+    name: ad.name,
+    category: ad.category,
+    city: ad.city,
+    color: ad.color,
+    age: ad.age,
+    weight: ad.weight,
+    teeth: ad.teeth,
+    description: ad.description,
+    price: ad.price
   });
 
-  // const [Photo, setphoto] = useState("");
-  // const inputPhoto = (e) => {
-  //   console.log(e.target.files[0]);
-  //   setphoto(e.target.files[0]);
-  // };
+  
 
-  const inputHandler = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
-  const onSubmit = async (e) => {
-    console.log("The Input Data=", input);
-    // console.log("The Photo Data=", Photo);
-    e.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/addPost", {
-      headers: {
-        "content-type": "multipart/formdata",
-      },
-      ...input,
-      // Photo,
-    });
-    const data1 = await response.data;
-    console.log(data1);
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // make API call to update ad with formData
+    axios.patch(`http://localhost:5000/api/updatePost/${id}`, formData)
+    .then(res => {
+        const response=res.data.data;
+        if(response){
+          navigate("/manageanimal");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
+
   return (
-    <>
-      <div className="container">
-        <Myaccount />
-        <div class="dashboard_right col-lg-8 col-xs-12 col-sm-8">
+    <div class="dashboard_right col-lg-8 col-xs-12 col-sm-8" style={{marginLeft:"40px"}}>
+    <form onSubmit={handleSubmit}>
           {" "}
-          <h3>Add New Animal</h3>
           <div
             class="signup col-lg-8 col-xs-12 col-sm-5"
             style={{ marginLeft: "0px", marginTop: "0px", width: "auto" }}
           >
             <p style={{ marginTop: "12px" }}></p>{" "}
-            <form enctype="multipart/form-data">
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
                 {" "}
                 <label>Name / نام</label>
@@ -64,8 +84,8 @@ function Addanimal() {
                   name="name"
                   defaultValue=""
                   required="required"
-                  value={input.name}
-                  onChange={inputHandler}
+                  value={formData.name}
+                  onChange={handleChange}
                 />{" "}
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -78,8 +98,8 @@ function Addanimal() {
                   name="type"
                   defaultValue=""
                   required="required"
-                  value={input.category}
-                  onChange={inputHandler}
+                  value={formData.category}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -92,8 +112,8 @@ function Addanimal() {
                   name="city"
                   defaultValue=""
                   required="required"
-                  value={input.city}
-                  onChange={inputHandler}
+                  value={formData.city}
+                  onChange={handleChange}
                 />
               </div>{" "}
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -107,8 +127,8 @@ function Addanimal() {
                   name="price"
                   defaultValue=""
                   required="required"
-                  value={input.price}
-                  onChange={inputHandler}
+                  value={formData.price}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -122,8 +142,8 @@ function Addanimal() {
                   name="teeth"
                   defaultValue=""
                   required="required"
-                  value={input.teeth}
-                  onChange={inputHandler}
+                  value={formData.teeth}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -137,8 +157,8 @@ function Addanimal() {
                   name="age"
                   defaultValue=""
                   required="required"
-                  value={input.age}
-                  onChange={inputHandler}
+                  value={formData.age}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -152,8 +172,8 @@ function Addanimal() {
                   name="color"
                   defaultValue=""
                   required="required"
-                  value={input.color}
-                  onChange={inputHandler}
+                  value={formData.color}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-5 col-xs-11 col-sm-5">
@@ -167,8 +187,8 @@ function Addanimal() {
                   name="weight"
                   defaultValue=""
                   required="required"
-                  value={input.weight}
-                  onChange={inputHandler}
+                  value={formData.weight}
+                  onChange={handleChange}
                 />
               </div>
               <div class="form-group col-lg-11 col-xs-11 col-sm-5">
@@ -179,55 +199,19 @@ function Addanimal() {
                   placeholder="Details"
                   name="description"
                   required="required"
-                  value={input.description}
-                  onChange={inputHandler}
+                  value={formData.description}
+                  onChange={handleChange}
                 >
                   {" "}
                 </textarea>{" "}
               </div>
-              <div class="form-group col-lg-11 col-xs-11 col-sm-5">
-                {/* <label>
-                  Pictures / تصویریں
-                  <strong> (Press Ctrl to select multiple files)</strong> / (
-                  Ctrl متعدد فائلوں کو منتخب کرنے کیلئے دبائیں)
-                </label>
-                <input type="file" name="Photo" onChange={inputPhoto} />{" "} */}
-                {/* <Form.Group className="mb-3" controlId="formBasicFile">
-                  <Form.Label>Add photo</Form.Label>
-                  <Form.Control
-                    type="file"
-                    name="Photo"
-                    onChange={inputPhoto}
-                  />
-                </Form.Group> */}
-              </div>
-              <div
-                class="status form-group col-lg-12 col-xs-11 col-sm-5"
-                style={{ display: "none", margin: "2px", padding: "2px" }}
-              >
-                <div>Processing</div>
-                <div>
-                  <img src="https://www.bakramandi.com.pk/btPublic/images/spinner.gif" />
-                </div>{" "}
-              </div>{" "}
-              <div
-                class="signup_btm col-lg-12 col-xs-11 col-sm-5"
-                style={{ marginTop: "15px" }}
-              >
-                {" "}
-                <input
-                  type="submit"
-                  onClick={onSubmit}
-                  value="Add"
-                  name="btnAddbakras"
-                />{" "}
-              </div>
-            </form>{" "}
+              <button type="submit" style={{marginTop:"20px", marginBottom:"20px", marginLeft:"20px"}}>Update Ad</button>
           </div>
-        </div>
-      </div>
-    </>
+       
+     
+    </form>
+    </div>
   );
-}
+};
 
-export default Addanimal;
+export default Updatepost;

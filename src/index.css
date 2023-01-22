@@ -963,6 +963,11 @@ section.contact-us .contact-info>div>div>div span:first-child {
   margin-bottom: 20px;
 }
 
+/* .table1 thead tr{
+  background-color: "#11b2a5";
+  border-bottom: "3px solid #11b2a5";
+} */
+
 .form-group {
   margin-left: 12px !important;
   margin-right: 14px !important;
