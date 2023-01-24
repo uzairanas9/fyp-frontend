@@ -1,14 +1,20 @@
 // // React component
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {  useParams } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-const AdminUpdateData = ({ user, userId }) => {
-
+const AdminUpdateData = ({ user, Id }) => {
+    const navigate = useNavigate();
     // const userId= localStorage.getItem("lohinUserId");
     // const [isSubmitted, setIsSubmitted] = useState(false);
     // const getNotes = async () => {
+
+      Id=useParams().id;
+    
+    console.log("This is user Id",Id)
         // API Call
-        const response = fetch(`http://localhost:5000/api/getSingleUser/${userId}`, {
+        const response = fetch(`http://localhost:5000/api/getSingleUser/${Id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -23,6 +29,7 @@ const AdminUpdateData = ({ user, userId }) => {
   const [formData, setFormData] = useState({
     name: user.name,
     phone: user.phoneno,
+    email:user.email,
   });
 
  
@@ -46,13 +53,14 @@ const AdminUpdateData = ({ user, userId }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.patch(`http://localhost:5000/api/updateUser/${userId}`, formData)
+    axios.patch(`http://localhost:5000/api/updateUser/${Id}`, formData)
       .then(res => {
         console.log(res.data);
-        
+        navigate("/Adminuserdata");
         setFormData({
             name: "",
             phone: "",
+            email:"",
           });
         //    setIsSubmitted(true);
         // setIsUpdated(true);
@@ -93,6 +101,19 @@ const AdminUpdateData = ({ user, userId }) => {
                   placeholder="Phone Number"
                   name="phoneno"
                   value={formData.phone}
+                  onChange={handleChange}
+                />{" "}
+              </div>
+              <div class="form-group col-lg-5 col-xs-11 col-sm-5">
+                {" "}
+                <label>Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                 />{" "}
               </div>

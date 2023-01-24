@@ -6,7 +6,7 @@ function Dashboard() {
   const [total, setTotal] = useState(0);
   useEffect(async () => {
     const response = await axios.get(
-      `http://localhost:5000/api/getUserPost/${localStorage.getItem("userId")}`
+      `http://localhost:5000/api/getUserPost/${localStorage.getItem("lohinUserId")}`
     );
     const data1 = await response.data;
     setTotal(data1.data.length);

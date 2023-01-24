@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AdminNavbar from './AdminNavbar';
-import {NavLink} from 'react-router-dom';
-import AdminUpdateData from './AdminUpdateData';
+import {NavLink, Link} from 'react-router-dom';
+import Adminallposts from './Adminallposts';
 
 const AdminUserData = () => {
   const [users, setUsers] = useState([]);
@@ -27,11 +27,11 @@ const AdminUserData = () => {
   return (
     <>
     {/* <AdminNavbar></AdminNavbar> */}
-    <h2 className="section-heading">User Data</h2>
+    <h1 className="section-heading" style={{marginTop:"20px"}}>User Data</h1>
     
-    {/* <Link to='/Updateuserdata' style={{textalign:"right", marginBottom:"50px"}}> Update User Data</Link> */}
-    <div class="table-responsive col-lg-12 col-xs-12 col-sm-12 border col-1"
-    style={{ float: "left", marginTop:"30px" }}>
+   <NavLink to='/Adminallposts' >  <button className="signup_btm1" style={{textalign:"right", marginBottom:"50px", marginLeft:"60px"}}> All Ads</button> </NavLink>
+    <div class="table-responsive col-lg-12 col-xs-12 col-sm-12 col-1"
+    style={{ float: "left", marginTop:"10px" }}>
       <table className="table1" style={{marginLeft:"60px"}}>
         <thead>
           <tr style={{
@@ -49,11 +49,11 @@ const AdminUserData = () => {
           {users.map((user) => (
             
             <tr key={user._id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.phoneno}</td>
-              <td>{user._id}</td>
-              <td><NavLink to={`/AdminUpdateData/${user._id}` } >Update User Data</NavLink> </td>
+              <td style={{border: "2px solid #11b2a5"}}>{user.name}</td>
+              <td style={{border: "2px solid #11b2a5"}}>{user.email}</td>
+              <td style={{border: "2px solid #11b2a5"}}>{user.phoneno}</td>
+              <td style={{border: "2px solid #11b2a5"}}>{user._id}</td>
+              <td style={{border: "2px solid #11b2a5"}}><NavLink to={`/AdminUpdateData/${user._id}` } >Update User Data</NavLink> </td>
             </tr>
           ))}
         </tbody>

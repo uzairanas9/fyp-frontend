@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import { NavLink, Navigate } from "react-router-dom";
 import Myaccount from "./Myaccount";
 function Addanimal() {
   const [input, setInput] = useState({
@@ -16,11 +17,11 @@ function Addanimal() {
     sellerId: localStorage.getItem("lohinUserId"),
   });
 
-  // const [Photo, setphoto] = useState("");
-  // const inputPhoto = (e) => {
-  //   console.log(e.target.files[0]);
-  //   setphoto(e.target.files[0]);
-  // };
+  const [photo, setPhoto] = useState();
+  const inputPhoto = (e) => {
+    console.log(e.target.files[0]);
+    setPhoto(e.target.files[0]);
+  };
 
   const inputHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -28,16 +29,23 @@ function Addanimal() {
 
   const onSubmit = async (e) => {
     console.log("The Input Data=", input);
+    
     // console.log("The Photo Data=", Photo);
     e.preventDefault();
     const response = await axios.post("http://localhost:5000/api/addPost", {
       headers: {
         "content-type": "multipart/formdata",
+        
       },
       ...input,
-      // Photo,
+      photo,
+      
+     
     });
     const data1 = await response.data;
+    // if(data1){
+      
+    // }
     console.log(data1);
   };
   return (
@@ -185,22 +193,22 @@ function Addanimal() {
                   {" "}
                 </textarea>{" "}
               </div>
-              <div class="form-group col-lg-11 col-xs-11 col-sm-5">
+              {/* <div class="form-group col-lg-11 col-xs-11 col-sm-5"> */}
                 {/* <label>
                   Pictures / تصویریں
                   <strong> (Press Ctrl to select multiple files)</strong> / (
                   Ctrl متعدد فائلوں کو منتخب کرنے کیلئے دبائیں)
-                </label>
-                <input type="file" name="Photo" onChange={inputPhoto} />{" "} */}
-                {/* <Form.Group className="mb-3" controlId="formBasicFile">
+                </label> */}
+                {/* <input style={{marginTop:"20px", marginRight:"10px"}} type="file" name="photo" onChange={inputPhoto} />{" "} */}
+                <Form.Group className="mb-3" controlId="formBasicFile">
                   <Form.Label>Add photo</Form.Label>
                   <Form.Control
                     type="file"
                     name="Photo"
                     onChange={inputPhoto}
                   />
-                </Form.Group> */}
-              </div>
+                </Form.Group>
+              {/* </div> */}
               <div
                 class="status form-group col-lg-12 col-xs-11 col-sm-5"
                 style={{ display: "none", margin: "2px", padding: "2px" }}

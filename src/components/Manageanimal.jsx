@@ -68,7 +68,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "25px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -79,7 +79,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "20px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -90,7 +90,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "22px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -101,7 +101,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "22px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -112,7 +112,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "20px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -123,7 +123,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "20px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -134,7 +134,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingLeft: "20px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -145,7 +145,7 @@ function Manageanimal() {
                   <th
                     style={{
                       paddingleft: "20px",
-                      borderRight: "1px solid #11b2a5",
+                      borderRight: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -156,7 +156,7 @@ function Manageanimal() {
               <tbody
                 style={{
                   backgroundColor: "white",
-                  borderTop: "2px solid #11b2a5",
+                  borderTop: "2px solid Black",
                 }}
               >
               </tbody>

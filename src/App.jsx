@@ -23,6 +23,7 @@ import Updatepost from './components/Updatepost';
 import Updateuserdata from './components/Updateuserdata';
 import AdminUserData from './components/Adminuserdata';
 import AdminUpdateData from './components/AdminUpdateData';
+import Adminallposts from './components/Adminallposts'
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/updateuserdata" element={<Updateuserdata/>} />
         <Route exact path="/AdminUpdateData/:id" element={<AdminUpdateData/>} />
         <Route exact path="/AdminUserData" element={<AdminUserData/>} />
+        <Route exact path="/Adminallposts" element={<Adminallposts/>} />
         
       </Routes>
       <Footer/>

@@ -28,11 +28,17 @@ const Login = () => {
     localStorage.setItem("authToken", data1.data?.token);
     localStorage.setItem("userId", data1?.user?._id);
     localStorage.setItem("lohinUserId", data1.data._id);
-    if (data1.token) {
+    if (data1.data.email==="admin@gmail.com") {
+      navigate("/Adminuserdata");
+      window.location.reload();
+      alert("Log in Successful");
+    } 
+    else if(data1.token) {
       navigate("/");
       window.location.reload();
       alert("Log in Successful");
-    } else {
+    }
+    else {
       alert("Wrong Email or Password Try Again");
     }
   };

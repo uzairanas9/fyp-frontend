@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Navigate, NavLink } from 'react-router-dom'
-import img6 from "../images/ad-img1.jpg"
+import img1 from "../images/img1.jpg"
 import Animaldetails from './Animaldetails';
 
 function Animallisting({id,name,price,type,weight,age,teeth,city}) {
@@ -14,7 +14,7 @@ function Animallisting({id,name,price,type,weight,age,teeth,city}) {
             <div class="product_litingbox col-lg-12 col-xs-12 col-sm-12 load-more__item">
                 <div class="listing_img col-lg-4 col-xs-12 col-sm-4">
                     <a href="">
-                        <img src={img6} class="img-responsive" alt="Bachda" align="middle" /></a>
+                        <img src={img1} class="img-responsive" alt="Bachda" align="middle" /></a>
                 </div>
                  <div class="listing_detl col-lg-8 col-xs-12 col-sm-8" style={{backgroundColor:"#39373"}}>
                     <h3>{name}<span style={{float:"right", paddingRight: "20px"}}>{price}</span> </h3>

@@ -6,6 +6,7 @@ const UpdateUser = ({ user, onUpdate, userId }) => {
 
     // const userId= localStorage.getItem("lohinUserId");
     const [isSubmitted, setIsSubmitted] = useState(false);
+    
     // const getNotes = async () => {
         // API Call
         const response = fetch(`http://localhost:5000/api/getSingleUser/${userId}`, {
