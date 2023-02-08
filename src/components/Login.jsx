@@ -20,27 +20,44 @@ const Login = () => {
       };
     });
   };
+
+  const[error,setError]=useState("");
   const formsubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(`http://localhost:5000/api/signin`, data);
+
+    try {
+      const response = await axios.post(`http://localhost:5000/api/signin`, data);
     const data1 = await response.data;
     // console.log("The SIGN-In User Data", data1.data._id);
-    localStorage.setItem("authToken", data1.data?.token);
-    localStorage.setItem("userId", data1?.user?._id);
+    
+    if (data1.data) {
+      if(data1.data.email==="admin@gmail.com"){
+        localStorage.setItem("authToken", data1.data?.token);
+      localStorage.setItem("userId", data1.data._id);
+      localStorage.setItem("lohinUserId", data1.data._id);
+        navigate("/Adminuserdata");
+        window.location.reload();
+        alert("Log in Successful");
+      }
+      else {
+        localStorage.setItem("authToken", data1.data?.token);
+    localStorage.setItem("userId", data1.data._id);
     localStorage.setItem("lohinUserId", data1.data._id);
-    if (data1.data.email==="admin@gmail.com") {
-      navigate("/Adminuserdata");
-      window.location.reload();
-      alert("Log in Successful");
+        navigate("/");
+        window.location.reload();
+        alert("Log in Successful");
     } 
-    else if(data1.token) {
-      navigate("/");
-      window.location.reload();
-      alert("Log in Successful");
     }
     else {
-      alert("Wrong Email or Password Try Again");
+      setError(data1.message)
+      // alert("Wrong Email or Password Try Again");
     }
+      
+    } catch (error) {
+      console.log("Error", error)
+    }
+
+    
   };
   return (
     <>
@@ -85,6 +102,11 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            {error && 
+            <div>
+              <p style={{color:"red", marginTop:"10px"}}>{error}</p>
+            </div>
+            }
             <div class="btn1 col-lg-12 col-xs-12 col-sm-12">
               <h5>Don't have an account?</h5>
               <button class="btn btn-secondary">

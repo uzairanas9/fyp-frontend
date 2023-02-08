@@ -24,14 +24,29 @@ import Updateuserdata from './components/Updateuserdata';
 import AdminUserData from './components/Adminuserdata';
 import AdminUpdateData from './components/AdminUpdateData';
 import Adminallposts from './components/Adminallposts'
+import Getcontactform from './components/Getcontactform'
+import Chat from './components/Chat'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BsFillChatFill } from 'react-icons/bs';
+import React, { useState } from 'react'
 
 
 function App() {
-  
+  const [toggle, setToggle] = useState(false);
+  const onClickHandler = () => {
+      setToggle(!toggle);
+      console.log(toggle);
+  }
   return (
     <>
     
       <Navbar />
+      <div className="my-5" style={{ marginTop: "50px", marginBottom: "80px" }}>
+                <div className='chat'>
+                {toggle ? (<Chat />) : null}
+                <button className='floating-icon' onClick={onClickHandler}><BsFillChatFill/></button>
+                </div>
+            </div>
       
       <Routes>
         <Route path="/" element={<Home />} />
@@ -52,6 +67,7 @@ function App() {
         <Route exact path="/AdminUpdateData/:id" element={<AdminUpdateData/>} />
         <Route exact path="/AdminUserData" element={<AdminUserData/>} />
         <Route exact path="/Adminallposts" element={<Adminallposts/>} />
+        <Route exact path='/Getcontactform' element={<Getcontactform/>}></Route>
         
       </Routes>
       <Footer/>

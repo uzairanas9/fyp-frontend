@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Manageanimal from './Manageanimal';
 
 function MarkAsSoldButton({postId}) {
   const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   // const adId = "6394ab2e0049fc3e367ca917";
+  
 
   const handleClick = async () => {
     const yes = window.confirm("Do you want to Delete this Post, This can't be restore")
@@ -13,6 +16,7 @@ function MarkAsSoldButton({postId}) {
         method: 'DELETE'
       });
       const data = await response.json();
+      setSuccess(true)
       // do something with the data, e.g. update the UI
     } catch (error) {
       console.error(error);
@@ -27,7 +31,7 @@ function MarkAsSoldButton({postId}) {
   };
 
   return (
-    <button onClick={handleClick} disabled={isLoading}>
+    <button className='signup_btm1_sold' onClick={handleClick} disabled={isLoading}>
       {isLoading ? 'Loading...' : 'Mark as Sold Or Delete Post'}
     </button>
   );

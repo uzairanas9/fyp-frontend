@@ -20,9 +20,12 @@ return(
 
     <>
     <h1 className="section-heading" style={{marginTop:"20px"}}>All Ads</h1>
-    <NavLink to='/Adminuserdata' >  <button className="signup_btm1" style={{ float:"left", marginLeft:"60px"}}> All Users</button> </NavLink>
+    <div>
+    <NavLink to='/Adminuserdata' >  <button className="signup_btm1" style={{ float:"left", marginLeft:"60px", fontSize:"18px"}}> All Users</button> </NavLink>
+    <NavLink to='/Getcontactform' >  <button className="signup_btm1" style={{float:"left",textalign:"center", marginBottom:"50px", marginLeft:"30px", fontSize:"18px"}}> Contact Form Data</button> </NavLink>
+    </div>
     <div class="table-responsive "
-      style={{ float: "left", marginLeft:"180px", marginTop:"50px" }}>
+      style={{ float: "left",  marginTop:"80px" }}>
     <table class="table">
     <thead>
                 <tr
@@ -108,15 +111,6 @@ return(
                   >
                     Sold
                   </th>
-                  <th
-                    style={{
-                      paddingleft: "20px",
-                      border: "2px solid #11b2a5",
-                      fontSize: "15px",
-                      fontFamily: "Karla-Bold",
-                      color: "white",
-                    }}
-                  ></th>
                 </tr>{" "}
               </thead>
     <tbody>

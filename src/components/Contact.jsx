@@ -10,11 +10,7 @@ import { BsFillChatFill } from 'react-icons/bs';
 
 function Contact() {
 
-    const [toggle, setToggle] = useState(false);
-    const onClickHandler = () => {
-        setToggle(!toggle);
-        console.log(toggle);
-    }
+   
     return (
         <>
             {/* <Navbar /> */}
@@ -28,12 +24,7 @@ function Contact() {
             <FontAwesomeIcon className='ic' icon="fa-regular fa-comment" />
             </div> */}
 
-            <div className="my-5" style={{ marginTop: "50px", marginBottom: "50px" }}>
-                <div className='chat'>
-                {toggle ? (<Chat />) : null}
-                <button className='floating-icon' onClick={onClickHandler}><BsFillChatFill/></button>
-                </div>
-            </div>
+           
 
 
             <Contactform />

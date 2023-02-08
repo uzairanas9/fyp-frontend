@@ -4,6 +4,18 @@ import postContext from "../context/postContext";
 import Animallisting from "./Animallisting";
 import Commonheader from "./Commonheader";
 import Filter from "./Filter";
+import img1 from "../images/img7.jpg"
+import img2 from "../images/img6.jpg"
+import img3 from "../images/img3.jpg"
+import img4 from "../images/img4.jpg"
+import img5 from "../images/img5.jpg"
+import img6 from "../images/img4.jpg"
+import img7 from "../images/img1.jpg"
+import img8 from "../images/img8.jpg"
+import img9 from "../images/img9.jpg"
+import img10 from "../images/img10.jpg"
+import img11 from "../images/img11.jpg"
+import img12 from "../images/img12.jpg"
 function Buyanimals() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -51,22 +63,7 @@ function Buyanimals() {
     setPosts(json.data);
     return json;
   };
-  // const getFilterData = async () => {
-  //   const response = await fetch(
-  //     `http://localhost:5000/api/getFilterPost/?city=${filterByCity}`,
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         // "auth-token":"Token here",
-  //       },
-  //     }
-  //   );
-  //   // console.log("The response=",response);
-  //   const json = await response.json();
-  //   console.log("The json data=", json);
-  //   setPosts(json.data);
-  // };
+  const images=[img1, img2, img3, img4, img5, img6, img7, img8, img9,img1, img2, img3,img7, img8,img12,img10, img11, img2, img3, img4, img5, img6, img7, img8,img2, img3,img7, img8,img12]
   return (
     <>
       <Commonheader title="Buy Animals"/>
@@ -108,8 +105,9 @@ function Buyanimals() {
         </div>
         <br></br>
       </div>
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <Animallisting
+          image = {images[index]}
           name={post.name}
           price={post.price}
           type={post.type}

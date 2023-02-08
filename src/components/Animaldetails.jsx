@@ -158,7 +158,7 @@ function Animaldetails() {
                 </li>
                 <li>
                   {" "}
-                  <span>2) Seller Contact {phone}</span>
+                  <span>2) Seller Contact "+92 {phone}"</span>
                 </li>
                 <li>
                     {" "}

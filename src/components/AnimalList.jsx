@@ -4,17 +4,17 @@ import {NavLink, useNavigate } from "react-router-dom";
 const AnimalList=({srNo,id,name,type,age,weight,city})=>{
   const navigate = useNavigate();
 return(
-    <div class="table-responsive col-lg-12 col-xs-12 col-sm-12 border col-1"
-      style={{ float: "left" }}>
+    <div class="table-responsive col-lg-12 col-xs-12 col-sm-12"
+      style={{ float: "left", textAlign:"center" }}>
     <table class="table">
-    <tbody>
+    <tbody style={{verticalAlign:"middle"}}>
       <tr
       >
         <th
           style={{
-            width:"20px",
+            width:"60px",
             paddingLeft: "25px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold"
           }}
@@ -23,9 +23,9 @@ return(
         </th>
         <th
           style={{
-            width:"260px",
+            width:"250px",
             paddingLeft: "20px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -35,9 +35,9 @@ return(
         </th>
         <th
           style={{
-            width:"100px",
+            width:"180px",
             paddingLeft: "22px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -47,9 +47,9 @@ return(
         </th>
         <th
           style={{
-            width:"125px",
+            width:"105px",
             paddingLeft: "22px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -59,9 +59,9 @@ return(
         </th>
         <th
           style={{
-            width:"60px",
+            width:"75px",
             paddingLeft: "20px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -71,9 +71,9 @@ return(
         </th>
         <th
           style={{
-            width:"80px",
+            width:"105px",
             paddingLeft: "20px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -83,8 +83,9 @@ return(
         </th>
         <th
           style={{
+            width:"60px",
             paddingLeft: "20px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
@@ -94,15 +95,26 @@ return(
         </th>
         <th
           style={{
+            width:"240px",
             paddingleft: "20px",
-            borderRight: "1px solid #11b2a5",
+            border: "1px solid grey",
             fontSize: "15px",
             fontFamily: "Karla-Bold",
             color: "black",
           }}
         >
           <MarkAsSoldButton postId={id} />
-          <NavLink to={`/updatepost/${id}`}>Update Post</NavLink>
+            </th>
+        <th
+          style={{
+            paddingleft: "20px",
+            border: "1px solid grey",
+            fontSize: "15px",
+            fontFamily: "Karla-Bold",
+            color: "black",
+          }}
+        >
+         <button className="signup_btm1_update"> <NavLink to={`/updatepost/${id}`} style={{textDecoration:"none", color:"white"}}>Update Post</NavLink></button>
         </th>
       </tr>
     </tbody>

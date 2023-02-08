@@ -8,7 +8,12 @@ function Personalinfo() {
   const [userInfo, setUserInfo] = useState("");
   const [isUpdated, setIsUpdated] = useState(false);
  
-
+  useEffect(() => {
+    const Id = localStorage.getItem("lohinUserId");
+    console.log("ID is here",Id)
+    setUserId(Id);
+    getNotes();
+  }, [userId]);
   console.log("The User Get from Local is", userId);
   const getNotes = async () => {
     // API Call
@@ -23,12 +28,11 @@ function Personalinfo() {
     setUserInfo(json.data);
   };
 
-  useEffect(() => {
-    const Id = localStorage.getItem("lohinUserId");
-    console.log("ID is here",Id)
-    setUserId(Id);
+  useEffect(()=>{
     getNotes();
-  }, [userId]);
+  },[])
+
+
 
   // const [isUpdated, setIsUpdated] = useState(false);
 

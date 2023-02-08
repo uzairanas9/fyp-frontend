@@ -30,7 +30,7 @@ function Manageanimal() {
     <>
       <div className="container">
         <Myaccount />
-        <div class="dashboard_right col-lg-8 col-xs-12 col-sm-8">
+        <div class="dashboard_right col-lg-12 col-xs-12 col-sm-8">
           {" "}
           <h3>Manage Animals</h3>
           <span
@@ -53,7 +53,7 @@ function Manageanimal() {
           </span>
           <div
             class="table-responsive col-lg-12 col-xs-12 col-sm-12"
-            style={{ float: "left" }}
+            style={{ float: "left", textAlign:"center" }}
           >
             {/* {data.map((element,index)=>{()})} */}
 
@@ -67,8 +67,9 @@ function Manageanimal() {
                 >
                   <th
                     style={{
+                      width:"25px",
                       paddingLeft: "25px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -78,8 +79,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"250px",
                       paddingLeft: "20px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -89,8 +91,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"180px",
                       paddingLeft: "22px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -100,8 +103,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"105px",
                       paddingLeft: "22px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -111,8 +115,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"35px",
                       paddingLeft: "20px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -122,8 +127,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"105px",
                       paddingLeft: "20px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -133,8 +139,9 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"25px",
                       paddingLeft: "20px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
@@ -144,13 +151,24 @@ function Manageanimal() {
                   </th>
                   <th
                     style={{
+                      width:"240px",
                       paddingleft: "20px",
-                      borderRight: "1px solid Black",
+                      border: "1px solid Black",
                       fontSize: "15px",
                       fontFamily: "Karla-Bold",
                       color: "white",
                     }}
-                  ></th>
+                    
+                  >Mark as Sold Or Delete</th>
+                  <th
+                    style={{
+                      paddingleft: "20px",
+                      border: "1px solid Black",
+                      fontSize: "15px",
+                      fontFamily: "Karla-Bold",
+                      color: "white",
+                    }}
+                  > Update Your Post </th>
                 </tr>{" "}
               </thead>
               <tbody

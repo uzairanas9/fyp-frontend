@@ -11,7 +11,7 @@ function Dashboard() {
     const data1 = await response.data;
     setTotal(data1.data.length);
     console.log(data1);
-  }, []);
+  }, [total]);
   return (
     <>
       <div className="container">
@@ -19,7 +19,7 @@ function Dashboard() {
         <Myaccount />
         <div class="dashboard_right col-lg-8 col-xs-12 col-sm-8">
           <h3>
-            Welcome <strong>Uzair Anas</strong>
+            Welcome <strong>To My Account</strong>
           </h3>
           <div class="dashboard_box col-lg-3 col-xs-12 col-sm-12">
             <h4>Total Animals</h4> <p>{total}</p>{" "}

@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Myaccount from "./Myaccount";
 function Addanimal() {
+  const navigate = useNavigate()
   const [input, setInput] = useState({
     name: "",
     type: "",
@@ -47,6 +48,7 @@ function Addanimal() {
       
     // }
     console.log(data1);
+    navigate("/buyanimals")
   };
   return (
     <>

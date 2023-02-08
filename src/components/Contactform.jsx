@@ -1,28 +1,38 @@
 import React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 
 const Contactform = () => {
     const [data, setdata] = useState({
-        fullname: "",
-        phone: "",
+        name: "",
+        phoneno: "",
         email: "",
         msg:"",
     });
 
     const InputEvent = (event)=>{
-        const {name, value} = event.target;
-
-        setdata((preVal)=>{
-            return{
-                ...preVal,
-                [name]: value,
-            };
-        });
+        setdata({
+            ...data,
+            [event.target.name]: event.target.value,
+          });
     };
-    const formsubmit = (e) =>{
-        e.preventDefault();
-        alert(`Your Message is sent to the admin \n \nName: ${data.fullname}, Mobile Number: ${data.phone}, Email Address: ${data.email} message: ${data.msg}`)
+    const formsubmit = async (event) =>{
+        event.preventDefault();
+
+        try {
+          await axios.post('http://localhost:5000/api/contact', data);
+          alert('Your message has been sent successfully!');
+          setdata({ name: "",
+          phoneno: "",
+          email: "",
+          msg:"",})
+        } catch (error) {
+          console.error(error);
+          alert('An error occurred while sending your message. Please try again later.', error);
+        }
     }
+
+    console.log("This is data", data)
     return (
         <>
             <div className="container contact_div">
@@ -32,16 +42,16 @@ const Contactform = () => {
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
-                                name='fullname'
-                                value={data.fullname}
+                                name='name'
+                                value={data.name}
                                 onChange={InputEvent}
                                 placeholder="Enter Your Full Name" />
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
                                 <input type="number" class="form-control" id="exampleFormControlInput1"
-                                name='phone'
-                                value={data.phone}
+                                name='phoneno'
+                                value={data.phoneno}
                                 onChange={InputEvent}
                                 placeholder="Enter Your Phone Number" />
                             </div>
